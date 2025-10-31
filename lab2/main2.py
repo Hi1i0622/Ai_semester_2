@@ -1,5 +1,5 @@
 import matplotlib
-matplotlib.use('TkAgg')  # или 'Qt5Agg', если TkAgg не работает
+matplotlib.use('TkAgg')
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -30,7 +30,7 @@ mid_vals = generate_membership_values(x_values, a_mid, b_mid, c_mid)
 high_vals = generate_membership_values(x_values, a_high, b_high, c_high)
 critical_vals = generate_membership_values(x_values, a_critical, b_critical, c_critical)
 
-# Пересечение вместо объединения
+# Пересечение
 low_intersection = fuzzy_intersection(low_vals, mid_vals)
 mid_intersection = fuzzy_intersection(mid_vals, high_vals)
 high_intersection = fuzzy_intersection(high_vals, critical_vals)
@@ -64,4 +64,5 @@ plt.legend()
 plt.title('Пересечение нечетких множеств уровней потребления')
 plt.grid(True)
 plt.savefig('fuzzy_intersection.png', dpi=300, bbox_inches='tight')
+
 plt.show()
